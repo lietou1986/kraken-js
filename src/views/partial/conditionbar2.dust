@@ -1,0 +1,7 @@
+<div class="seach_yx">
+    <span class="search_yx_tj">
+        共<em>{searchData.numFound}</em>个职位满足条件
+    </span><span class="search_yx_tj">
+        当前搜索：全国
+    </span>
+</div>

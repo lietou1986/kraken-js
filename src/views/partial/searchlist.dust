@@ -1,0 +1,86 @@
+<style type="text/css">
+    .fk_lv span {
+        padding-left: 8px;
+    }
+</style>
+{@eq key=searchInfo.IsHasSearchResult value="true" type="boolean"}
+<div class="newlist_wrap fl">
+    <div class="newlist_top">
+        <div class="clearfix">
+            <div class="newlist_top_left fl" id="newlist_top_left_menubtn">
+               {>"partial/sorttag" searchInfo=searchInfo/}
+            </div>
+            <div class="newlist_top_right fr" id="newlist_top_btn">
+               {>"partial/showmodel" searchInfo=searchInfo/}
+            </div>
+        </div>
+    </div>
+    <div class="newlist_list" id="newlist_list_div">
+        <p class="newlist_list_top clearfix">
+            <label>
+                    <input type="checkbox" name="allvacancyid" onclick=" zlapply.checkAll(this, 'vacancyid') " id="checkbox4al2" />
+                    <span>全选</span>
+                </label>
+            <a class="newlist_sqzw selectall-btn" href="javascript:zlapply.searchjob.ajaxApplyBrig2(document.frmMain.vacancyid,'ssb');dyweTrackEvent('applyNow','joblist');">申请职位</a>
+            <a class="newlist_sczw Collection-btn" href="javascript:zlapply.searchjob.save();dyweTrackEvent('aboutposition','bottomselect');">收藏职位</a>
+        </p>
+        <div class="newlist_list_content" id="newlist_list_content_table">
+            {>"partial/tabhead" searchInfo=searchInfo/}
+            {?brandInfo}
+            {>"partial/brandlist" brandInfo=brandInfo/}
+            {/brandInfo}
+            {>"partial/datalist" searchInfo=searchInfo results=searchResult.results/}
+            {@eq key=searchInfo.IsUseSearchComplement value="true" type="boolean"}
+              <div style="text-align: center; padding: 15px; width: 100%;" class="show_recommend_tips">
+            {@eq key=searchResult.numFound value=0}
+            <table><tr class="sou_tips01"><td colspan="5"  style="width:805px;"><i></i>抱歉，没有符合您要求的职位。以下职位也很不错，不妨试试~</td></tr></table>
+            {:else}
+            <table><tr class="sou_tips02"><td colspan="5"  style="width:805px;"><i></i>以下职位也很不错，不妨试试~</td></tr></table>
+            {/eq}
+            </div>
+             {>"partial/datalist" searchInfo=searchInfo results=complementResult.results/}
+            {/eq}
+        </div>
+        <p class="newlist_list_top clearfix">
+            <label>
+                    <input type="checkbox" name="allvacancyid" onclick=" zlapply.checkAll(this, 'vacancyid') " id="checkbox4al2" />
+                    <span>全选</span>
+                </label>
+            <a class="newlist_sqzw selectall-btn" href="javascript:zlapply.searchjob.ajaxApplyBrig2(document.frmMain.vacancyid,'ssb');dyweTrackEvent('applyNow','joblist');">申请职位</a>
+            <a class="newlist_sczw Collection-btn" href="javascript:zlapply.searchjob.save();dyweTrackEvent('aboutposition','bottomselect');">收藏职位</a>
+        </p>
+    </div>
+{@ne key=searchInfo.IsUseSearchComplement value="true" type="boolean"}
+     {>"partial/pagination" searchInfo=searchInfo pagination=pagination/}
+{/ne}   
+</div>
+<input type="hidden" name="vacancyids" id="vacancyids" value="{exposureData.ids}" /> 
+{:else}
+<div class="newlist_wrap fl">
+    <div class="no-resulte-warning" style="margin-top:40px;">
+        <p>
+            <strong>对不起，暂时无符合您条件的职位</strong><br /> 重新修改搜索条件后再进行搜索
+        </p>
+    </div>
+</div>
+{/eq}
+<!--beg 反馈通 -->
+<link href="http://img01.zhaopin.cn/2014/common/css/reset-min.css" rel="stylesheet" type="text/css" />
+<link href="http://img01.zhaopin.cn/2014/common/css/feedback/feedback-tip.css" rel="stylesheet" type="text/css" />
+<script src="http://img01.zhaopin.cn/2014/common/js/window.dialog.01.js"></script>
+<script src="http://img01.zhaopin.cn/2014/common/js/jobapply/job-apply.js"></script>
+<!-- 增加反馈率 -->
+<script type="text/javascript">
+    $(function() {
+        $(".fk_lv").each(function() {
+            var fk = parseFloat($(this).text());
+            if (fk >= 80) {
+                $(this).css({
+                    color: "red"
+                });
+            }
+        });
+    })
+</script>
+
+<!--end 反馈通 -->

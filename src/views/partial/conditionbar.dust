@@ -1,0 +1,113 @@
+<!--已选条件、订阅邮箱等功能组-->
+<div class="seach_yx">
+    <span class="search_yx_tj">
+    {searchData.showInfo|s}个职位满足条件
+    </span> {@ne key=searchData.numFound value=0}
+    <a class="search_yb" href="javascript:">
+            保存搜索条件
+     </a> {/ne}
+
+    <font class="search_teshu" id="searchHistory">
+        <a class="search_ybc">已保存(<em id="searchHistoryCount">0</em>)</a>
+        <ul id="searchHistoryList"></ul>
+    </font>
+    <a class="search_cztj" href="/jobs/searchresult.ashx">
+        重置搜索条件
+    </a> {@ne key=searchData.numFound value=0}
+    <a class="search_sqtj" href="javascript:;">收起筛选条件</a> {/ne}
+</div>
+<script src="/js/json2.js"></script>
+<script type="text/javascript">
+    var count = $('.search_yx_tj').find('em').text();
+    var url4zpAnalytics = document.location.pathname + document.location.search + '&rt=' + count;
+    var currentSearchHistory = {
+        name: '{searchData.history.name}',
+        url: '{searchData.history.url}'
+    };
+    $(document).ready(function() {
+        renderSearchHistory();
+        $(".search_yb").unbind().click(function() {
+            saveSearchHistory(currentSearchHistory.name, currentSearchHistory.url);
+        });
+    });
+
+    function saveSearchHistory(name, url) {
+        try {
+            var searchHistorysCookie = $.cookie('searchHistory');
+            var searchHistorys;
+            if (searchHistorysCookie) {
+                searchHistorys = JSON.parse(searchHistorysCookie);
+                if (searchHistorys.length == 3) {
+                    searchHistorys.pop();
+                }
+                searchHistorys.unshift({
+                    name: name,
+                    url: url
+                });
+            } else {
+                searchHistorys = [{
+                    name: name,
+                    url: url
+                }];
+            }
+            $.cookie('searchHistory', JSON.stringify(searchHistorys), {
+                expires: 30,
+                path: '/'
+            });
+            renderSearchHistory();
+            saveSearchHistoryOver();
+        } catch (ex) {}
+    }
+
+    function renderSearchHistory() {
+        try {
+            var searchHistorysCookie = $.cookie('searchHistory');
+            if (searchHistorysCookie) {
+                var searchHistorys = JSON.parse(searchHistorysCookie);
+                $("#searchHistoryCount").html(searchHistorys.length);
+                if (searchHistorys.length > 0) {
+                    var sb = [];
+                    for (var i = 0; i < searchHistorys.length; i++) {
+                        var searchHistory = searchHistorys[i];
+                        sb.push('<li class="clearfix"><a href="' + searchHistory.url + '">' + searchHistory.name + '</a><span onClick="javascript:deleteSearchHistory(' + i + ');"></span></li>');
+                    }
+                    $("#searchHistoryList")[0].innerHTML = sb.join("");
+                } else {
+                    $("#searchHistoryList")[0].innerHTML = "";
+                    $(".search_yb").removeClass("saveover").css("color", "#3359ac").unbind().click(function() {
+                        saveSearchHistory(currentSearchHistory.name, currentSearchHistory.url);
+                    });
+                }
+            } else {
+                $("#searchHistoryCount").html("0");
+            }
+        } catch (ex) {}
+    }
+
+    function deleteSearchHistory(index) {
+        try {
+            var searchHistorysCookie = $.cookie('searchHistory');
+            if (searchHistorysCookie) {
+                var searchHistorys = JSON.parse(searchHistorysCookie);
+                if (searchHistorys.length >= index + 1) {
+                    searchHistorys.splice(index, 1);
+                }
+                $.cookie('searchHistory', JSON.stringify(searchHistorys), {
+                    expires: 30,
+                    path: '/'
+                });
+            }
+            renderSearchHistory();
+        } catch (ex) {}
+    }
+
+    function saveSearchHistoryOver() {
+        if (!$(".search_yb").hasClass("saveover")) {
+            $(".search_yb").addClass("saveover").css("color", "#999").unbind();
+            $('.relucss_tc').stop().fadeIn();
+            setTimeout(function() {
+                $('.relucss_tc').stop().fadeOut();
+            }, 1000);
+        }
+    }
+</script>

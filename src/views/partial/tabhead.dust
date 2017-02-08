@@ -1,0 +1,8 @@
+
+{@ne key=searchInfo.ShowModel value=1}
+<table width="853" class="newlist" cellpadding="0" cellspacing="0"><tr><th class="zwmc" style="width:250px;"><span>职位名称</span></th>
+<th style="width:60px;">反馈率</th><th class="gsmc">公司名称</th>	<th class="zwyx">职位月薪</th><th class="gzdd">工作地点</th><th class="gxsj">
+   {@eq key=searchInfo.SortBy value=2}首发日{:else}发布日期{/eq}
+</th></tr></table>
+{/ne}
+                

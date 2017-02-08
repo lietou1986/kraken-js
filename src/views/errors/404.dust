@@ -1,0 +1,32 @@
+{>"layouts/master" /}
+{<Style}
+    <style type="text/css">
+     a {
+            text-decoration: none;
+        }
+
+        .box {
+            width: 450px;
+            margin: 50px auto;
+            padding-left: 70px;
+            font-size: 14px;
+            line-height: 2em;
+            background: url("/images/errorbg.png") no-repeat 0 10px;
+        }
+    </style>
+{/Style}
+
+{<Body}
+<div class="box">
+        尊敬的用户，您好！<br />
+        没有找您要的页面。<br />
+        <br />
+        <a href="http://www.zhaopin.com/">返回智联招聘首页&gt;</a><br />
+        <br />
+        <strong>
+            如有任何疑问，可以用下列方式联系我们：<br />
+            电话：400-885-9898 或 800-810-0484 <br />
+            向智联客服提交问题或建议，请点击[ <a href="http://interact.zhaopin.com/feedback/feedback.asp">这里</a> ]
+        </strong>
+    </div>
+{/Body}

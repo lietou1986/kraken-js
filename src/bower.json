@@ -1,0 +1,18 @@
+{
+  "name": "sou-zhaopin-com",
+  "description": "new site for sou.zhaopin.com by nodejs",
+  "main": "index.js",
+  "author": "len.zhang@zhaopin.com.cn",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ]
+}

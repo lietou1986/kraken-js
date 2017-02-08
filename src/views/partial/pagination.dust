@@ -1,0 +1,6 @@
+<div class="pagesDown" style="_width:570px">
+    <ul>
+        {pagination|s}
+        <li class="clearfix"></li>
+    </ul>
+</div>

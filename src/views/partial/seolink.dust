@@ -1,0 +1,50 @@
+
+{#seoInfo}
+
+{?relationLink}
+<li>
+{#relationLink}
+   {.|s}
+{/relationLink}
+</li>
+{/relationLink}
+
+<li>
+{?cityLink}
+{#cityLink}
+   <a href="{value}" target="_blank">{key}招聘</a>
+{/cityLink}
+{:else} 
+    <a href="http://www.zhaopin.com/beijing/" target="_blank">北京招聘</a>
+    <a href="http://www.zhaopin.com/shanghai/" target="_blank">
+            上海招聘
+        </a>
+    <a href="http://www.zhaopin.com/shenzhen/" target="_blank">深圳招聘</a>
+    <a href="http://www.zhaopin.com/guangzhou/" target="_blank">
+            广州招聘
+        </a>
+    <a href="http://www.zhaopin.com/tianjin/" target="_blank">天津招聘</a>
+    <a href="http://www.zhaopin.com/wuhan/" target="_blank">
+            武汉招聘
+        </a>
+    <a href="http://www.zhaopin.com/xian/" target="_blank">西安招聘</a>
+    <a href="http://www.zhaopin.com/chengdu/" target="_blank">
+            成都招聘
+        </a>
+    <a href="http://www.zhaopin.com/dalian/" target="_blank">大连招聘</a>
+    <a href="http://www.zhaopin.com/changchun/" target="_blank">
+            长春招聘
+        </a>
+    <a href="http://www.zhaopin.com/shenyang/" target="_blank">沈阳招聘</a>
+{/cityLink}
+</li>
+ {?juLink}
+<li>
+   
+    <h2>招聘热门职位：</h2>
+    {#juLink}
+    {.|s}
+{/juLink}
+</li>
+  {/juLink}
+  {/seoInfo}

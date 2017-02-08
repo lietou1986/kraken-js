@@ -1,0 +1,42 @@
+ <link rel="stylesheet" href="http://img06.zpin.net.cn/2014/head_foot/css/head_foot.css">
+ <div class="all_headcontainer">
+	<div class="all_top">
+		<div class="all_topcontent">
+			<div class="all_topcontenter">
+				<div class="all_addMod">
+					<div id="companyLoginregin">
+				        <a href="#" id="login_text" class="allhead_login all_common" rel="nofollow" onclick="dyweTrackEvent('newtopbarLU','clickPersonLogin')">登录</a><span class="allhead_sep"></span><a href="http://passport.zhaopin.com/account/register" class="allhead_regi all_common" onclick="dyweTrackEvent('addnewlink','personregister')" rel="nofollow">注册</a>
+				    </div>
+					<div id="companyLogining" style="display: none;">
+					    <span id="personname" title="" class="allhead_login all_common"></span><span class="allhead_sep"></span><a href="#" id="personcheckout" onclick="dyweTrackEvent('addnewlink','personexit')" class="allhead_login all_common">退出</a>
+					</div>
+				</div>
+				<div class="all_addDiv">
+					<a href="https://passport.zhaopin.com/org/login" class="allhead_postoffice all_common" target="_blank" onclick="dyweTrackEvent('addnewlink','compuser')" rel="nofollow">发布职位 <i class="all_icon allhead_gt"></i></a>
+					<span><i class="all_icon allhead_tel"></i><b class="allhead_telcon">400-885-9898</b></span>
+					<strong><a href="http://www.zhaopin.com/citymap.html" class="allchoice_city all_common" target="_blank" onclick="dyweTrackEvent('addnewlink','choosecity')">选择城市</a></strong>
+					<i class="all_icon allhead_phone"></i><a href="http://images.zhaopin.com/2012/other/mobile/mobile.html" class="allhead_phonecon all_common" target="_blank" onclick="dyweTrackEvent('addnewlink','mobilejob')" rel="nofollow">手机求职</a>
+				</div>				
+			</div>
+		</div>
+	</div><!-- top结束 -->
+	<div class="all_nav">
+		<div class="all_navcontent">
+			<a href="http://www.zhaopin.com/" class="allhead_img" title="智联招聘">
+				<img src="http://img01.zhaopin.cn/2014/head_foot/img/Allhead_logo.png" alt="智联招聘">
+			</a>
+			<ul class="all_navlist">
+				<li><a href="http://www.zhaopin.com/">首页</a></li>
+				<li><a href="http://my.zhaopin.com/">简历中心</a></li>
+				<li><a href="http://sou.zhaopin.com/">职位搜索</a></li>
+				<li><a href="http://xiaoyuan.zhaopin.com/" target="_blank">校园招聘</a></li>
+				<li><a href="http://www.highpin.cn/zhiwei/?fromType=12&amp;utm_source=zpsygdad&amp;utm_medium=cpc&amp;utm_content=zpsygdadtextlink&amp;utm_campaign=zpsygdadanalytics&amp;utm_term=onlinepromo_201402">高端招聘</a></li>
+				<li><a href="http://edu.zhaopin.com/" target="_blank" onclick="dyweTrackEvent('addnewlink','educchannal')">智联教育</a></li>
+				<li><a href="http://www.zhaopin.com/jobseeker/index_industry.html" target="_blank">行业求职</a></li>
+				<li><a href="http://article.zhaopin.com/">求职指导</a></li>
+				<li><a href="http://ceping.zhaopin.com/" target="_blank" rel="nofollow">智联测评</a></li>
+			</ul>
+		</div>
+	</div><!-- nav结束 -->
+ </div>
+<script type="text/javascript" src="http://img08.zpin.net.cn/2014/head_foot/js/head_foot.js"></script>

@@ -1,0 +1,405 @@
+ [
+    {
+        "en_name": "IT|Telecom|Electronics|Internet",
+        "code": "10100",
+        "name": "IT|通信|电子|互联网",
+        "sublist": [
+            {
+                "en_name": "Internet/E-Commerce",
+                "code": "210500",
+                "name": "互联网/电子商务",
+                "sublist": []
+            },
+            {
+                "en_name": "Computer Software",
+                "code": "160400",
+                "name": "计算机软件",
+                "sublist": []
+            },
+            {
+                "en_name": "IT Service/General IT",
+                "code": "160000",
+                "name": "IT服务(系统/数据/维护)",
+                "sublist": []
+            },
+            {
+                "en_name": "Electronic/Semiconductor/IC",
+                "code": "160500",
+                "name": "电子技术/半导体/集成电路",
+                "sublist": []
+            },
+            {
+                "en_name": "Computer Hardware",
+                "code": "160200",
+                "name": "计算机硬件",
+                "sublist": []
+            },
+            {
+                "en_name": "Telecom & Network Equipment",
+                "code": "300100",
+                "name": "通信/电信/网络设备",
+                "sublist": []
+            },
+            {
+                "en_name": "Telecom Operators/Service Providers",
+                "code": "160100",
+                "name": "通信/电信运营、增值服务",
+                "sublist": []
+            },
+            {
+                "en_name": "Online Game",
+                "code": "160600",
+                "name": "网络游戏",
+                "sublist": []
+            }
+        ]
+    },
+    {
+        "en_name": "Finance",
+        "code": "10200",
+        "name": "金融业",
+        "sublist": [
+            {
+                "en_name": "Security/Futures",
+                "code": "180000",
+                "name": "基金/证券/期货/投资",
+                "sublist": []
+            },
+            {
+                "en_name": "Insurance",
+                "code": "180100",
+                "name": "保险",
+                "sublist": []
+            },
+            {
+                "en_name": "Banking",
+                "code": "300500",
+                "name": "银行",
+                "sublist": []
+            },
+            {
+                "en_name": "Trust/Guarantee/Auction/Pawn Business",
+                "code": "300900",
+                "name": "信托/担保/拍卖/典当",
+                "sublist": []
+            }
+        ]
+    },
+    {
+        "en_name": "Real Estate|Construction",
+        "code": "10800",
+        "name": "房地产|建筑业",
+        "sublist": [
+            {
+                "en_name": "Real Estate/Construction/Building Materials",
+                "code": "140000",
+                "name": "房地产/建筑/建材/工程",
+                "sublist": []
+            },
+            {
+                "en_name": "Interior Design",
+                "code": "140100",
+                "name": "家居/室内设计/装饰装潢",
+                "sublist": []
+            },
+            {
+                "en_name": "Property Management",
+                "code": "140200",
+                "name": "物业管理/商业中心",
+                "sublist": []
+            }
+        ]
+    },
+    {
+        "en_name": "Business services",
+        "code": "10900",
+        "name": "商业服务",
+        "sublist": [
+            {
+                "en_name": "Professional Services/Consulting",
+                "code": "200300",
+                "name": "专业服务/咨询",
+                "sublist": []
+            },
+            {
+                "en_name": "Advertising/Exhibitions/Public Relations",
+                "code": "200302",
+                "name": "广告/会展/公关",
+                "sublist": []
+            },
+            {
+                "en_name": "Agency",
+                "code": "201400",
+                "name": "中介服务",
+                "sublist": []
+            },
+            {
+                "en_name": "Testing/Certification",
+                "code": "201300",
+                "name": "检验/检测/认证",
+                "sublist": []
+            },
+            {
+                "en_name": "Outsourcing Services",
+                "code": "300300",
+                "name": "外包服务",
+                "sublist": []
+            }
+        ]
+    },
+    {
+        "en_name": "Trade|Wholesale|Retail|Leasing",
+        "code": "10300",
+        "name": "贸易|批发|零售|租赁业",
+        "sublist": [
+            {
+                "en_name": "Fast Moving Consumer Goods",
+                "code": "120400",
+                "name": "快速消费品",
+                "sublist": []
+            },
+            {
+                "en_name": "Durable Consumer Goods",
+                "code": "120200",
+                "name": "耐用消费品",
+                "sublist": []
+            },
+            {
+                "en_name": "Trading/Import or Export",
+                "code": "170500",
+                "name": "贸易/进出口",
+                "sublist": []
+            },
+            {
+                "en_name": "Retail/Wholesale",
+                "code": "170000",
+                "name": "零售/批发",
+                "sublist": []
+            },
+            {
+                "en_name": "Leasing Service",
+                "code": "300700",
+                "name": "租赁服务",
+                "sublist": []
+            }
+        ]
+    },
+    {
+        "en_name": "Stationery|Artcraft",
+        "code": "10400",
+        "name": "文体教育|工艺美术",
+        "sublist": [
+            {
+                "en_name": "Education/Training",
+                "code": "201100",
+                "name": "教育/培训/院校",
+                "sublist": []
+            },
+            {
+                "en_name": "Toys/Arts/Collections/luxury",
+                "code": "120800",
+                "name": "礼品/工艺美术/奢侈品",
+                "sublist": []
+            }
+        ]
+    },
+    {
+        "en_name": "Production|Manufacturing",
+        "code": "10500",
+        "name": "生产|加工|制造",
+        "sublist": [
+            {
+                "en_name": "Automobile/Motorcycle",
+                "code": "121000",
+                "name": "汽车/摩托车",
+                "sublist": []
+            },
+            {
+                "en_name": "Heavy Machinenary",
+                "code": "129900",
+                "name": "大型设备/机电设备/重工业",
+                "sublist": []
+            },
+            {
+                "en_name": "Processing & Manufacturing",
+                "code": "121100",
+                "name": "加工制造（原料加工/模具）",
+                "sublist": []
+            },
+            {
+                "en_name": "Instruments and Meters & Industrial Automation",
+                "code": "121200",
+                "name": "仪器仪表及工业自动化",
+                "sublist": []
+            },
+            {
+                "en_name": "Printing/Packaging/Paper",
+                "code": "210600",
+                "name": "印刷/包装/造纸",
+                "sublist": []
+            },
+            {
+                "en_name": "Office Supplies & Equipment",
+                "code": "120700",
+                "name": "办公用品及设备",
+                "sublist": []
+            },
+            {
+                "en_name": "Pharmaceuticals/Bio-technology",
+                "code": "121300",
+                "name": "医药/生物工程",
+                "sublist": []
+            },
+            {
+                "en_name": "Medical Facilities/Equipment",
+                "code": "121500",
+                "name": "医疗设备/器械",
+                "sublist": []
+            },
+            {
+                "en_name": "Aeronautics/Astronautics Research and Manufacturing",
+                "code": "300000",
+                "name": "航空/航天研究与制造",
+                "sublist": []
+            }
+        ]
+    },
+    {
+        "en_name": "Traffic Service|Logistics|Warehouse",
+        "code": "11500",
+        "name": "交通|运输|物流|仓储",
+        "sublist": [
+            {
+                "en_name": "Transportation",
+                "code": "150000",
+                "name": "交通/运输",
+                "sublist": []
+            },
+            {
+                "en_name": "Logistics/Warehouse",
+                "code": "301100",
+                "name": "物流/仓储",
+                "sublist": []
+            }
+        ]
+    },
+    {
+        "en_name": "Service Industry",
+        "code": "10000",
+        "name": "服务业",
+        "sublist": [
+            {
+                "en_name": "Public Health",
+                "code": "121400",
+                "name": "医疗/护理/美容/保健/卫生",
+                "sublist": []
+            },
+            {
+                "en_name": "Hotel/Restaurant",
+                "code": "200600",
+                "name": "酒店/餐饮",
+                "sublist": []
+            },
+            {
+                "en_name": "Tourism",
+                "code": "200800",
+                "name": "旅游/度假",
+                "sublist": []
+            }
+        ]
+    },
+    {
+        "en_name": "Culture|Sport|Entertainment",
+        "code": "11300",
+        "name": "文化|传媒|娱乐|体育",
+        "sublist": [
+            {
+                "en_name": "Media/Publication/Films",
+                "code": "210300",
+                "name": "媒体/出版/影视/文化传播",
+                "sublist": []
+            },
+            {
+                "en_name": "Entertainment/Sports/Leisure",
+                "code": "200700",
+                "name": "娱乐/体育/休闲",
+                "sublist": []
+            }
+        ]
+    },
+    {
+        "en_name": "Energy|Mining|Environmental Protection",
+        "code": "11600",
+        "name": "能源|矿产|环保",
+        "sublist": [
+            {
+                "en_name": "Energy/Minerals/Mining/Metallurgy",
+                "code": "130000",
+                "name": "能源/矿产/采掘/冶炼",
+                "sublist": []
+            },
+            {
+                "en_name": "Petroleum/Chemical Industry",
+                "code": "120500",
+                "name": "石油/石化/化工",
+                "sublist": []
+            },
+            {
+                "en_name": "Electric/Power/Water Resource",
+                "code": "130100",
+                "name": "电气/电力/水利",
+                "sublist": []
+            },
+            {
+                "en_name": "Environmental Protection",
+                "code": "201200",
+                "name": "环保",
+                "sublist": []
+            }
+        ]
+    },
+    {
+        "en_name": "Government|Non profit",
+        "code": "11100",
+        "name": "政府|非盈利机构",
+        "sublist": [
+            {
+                "en_name": "Government/Public Service/Non-Profit Organizations",
+                "code": "200100",
+                "name": "政府/公共事业/非盈利机构",
+                "sublist": []
+            },
+            {
+                "en_name": "Academic/Scientific Research",
+                "code": "120600",
+                "name": "学术/科研",
+                "sublist": []
+            }
+        ]
+    },
+    {
+        "en_name": "Agriculture|Forestry|Animal Husbandry|Fishing|Others",
+        "code": "11400",
+        "name": "农|林|牧|渔|其他",
+        "sublist": [
+            {
+                "en_name": "Agriculture/Forestry/Animal Husbandry/Fishing",
+                "code": "100000",
+                "name": "农/林/牧/渔",
+                "sublist": []
+            },
+            {
+                "en_name": "Multiplex Management",
+                "code": "100100",
+                "name": "跨领域经营",
+                "sublist": []
+            },
+            {
+                "en_name": "Other",
+                "code": "990000",
+                "name": "其他",
+                "sublist": []
+            }
+        ]
+    }
+]

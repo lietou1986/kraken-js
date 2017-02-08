@@ -1,0 +1,97 @@
+{#brandInfo}
+<table class="newlist" width="853" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <td align="center" width="200" rowspan="2" valign="top">
+                <input type="checkbox" onclick=" zlapply.uncheckAll('allvacancyid') " name="vacancyid" id="brandVacancyid_1">
+                <div class="Hover170">
+                    <a href="{companyURL}" class="Max-img" target="_blank" onclick=" dyweTrackEvent('brand', 'brandlogo') ">
+                        <img src="{logoUrl}">
+                    </a>
+                </div>
+            </td>
+            <td>
+                <div class="Brand_title">
+                    <p class="Brand_title_single">
+                        <a style="width:345px; margin-right:33px; display:inline-block;" href="{companyURL}" target="_blank" onclick=" dyweTrackEvent('brand', 'brandcompanyname') ">{companyName}</a>
+                        <a target="_blank" href="http://e.zhaopin.com/products/3/detail.do"
+                            style="font-weight:normal; vertical-align:top; font-size:13px;display: inline-block; ">
+                            <font color="#3359ac">品牌专区，助您揽才&gt;&gt;</font>
+                        </a>
+                    </p>
+                    <p class="Brand_title_fuli">
+{#welfare}
+ <span>{.}</span>
+{/welfare}
+                    </p>
+
+                </div>
+
+            </td>
+            <td width="130" align="center" width="100">
+                <a href="companysearch.ashx?CompID={promoteCompany}" target="_blank" onclick=" dyweTrackEvent('brand', 'bandotherpost') ">
+                    <font color="#3359ac">公司其他职位</font>
+                </a>
+
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" style="padding: 0px;">
+                <ul class="Brand_list">
+{#jobInfo}
+<li>
+                               {@first} 
+                                
+                                    <input type="hidden" value="{.number}{.applyFlag})" name="brandPosition1" id="brandPosition1">
+                              
+                                {:else}
+                                
+                                    <input type="checkbox" onclick=" zlapply.uncheckAll('allvacancyid') " value="{.number}{.applyFlag}")" name="vacancyid" id="brandVacancyid_{$idx}.ToString()" style="display: none">
+                                
+                                  {/first}
+                                <a href="{.positionURL}" target="_blank" onclick=" dyweTrackEvent('brand', 'brandpost') ">{.jobName}</a>
+                                <div>
+                                    <span>{.salary.display}</span>|
+                                    <span>{.city.display}</span>|
+                                    <span>{.displayDate}</span>
+                                    <span></span>
+                                </div>
+                            </li>
+{/jobInfo}
+                </ul>
+
+
+            </td>
+            <td align="center" class="Brand_zwsq" valign="top">
+{#jobInfo}
+                <p>
+                    <a onclick=" dyweTrackEvent('brand', 'bandapply');return zlapply.searchjob.ajaxApplyBrig1('{.number}', 'ssi', '{.applyFlag}', '0'); " href="javascript:void(0)">
+                        <img src="/images/newlist_sqimg_03.jpg">
+                    </a>
+                </p>
+{/jobInfo}
+            </td>
+        </tr>
+    </tbody>
+</table>
+{/brandInfo}
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*将第一个职位的值赋给控制复选框*/
+        $("#brandVacancyid_1").val($("#brandPosition1").val());
+
+        $("#brandVacancyid_1").click(function() {
+            var checked = $(this).attr("checked");
+
+            if (checked == "checked") {
+                $("#brandVacancyid_2").attr("checked", checked);
+                $("#brandVacancyid_3").attr("checked", checked);
+            } else {
+                $("#brandVacancyid_2").removeAttr("checked");
+                $("#brandVacancyid_3").removeAttr("checked");
+            }
+        });
+
+        dyweTrackEvent('brand', 'brandpvuv');
+    });
+</script>

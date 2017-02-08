@@ -1,0 +1,257 @@
+<div class="newlist_sx">
+    <!--职位类别-->
+    <div class="newlist_list1" style="{tagInfo.JobType.style}">
+        <div class="clearfix">
+            <div class="search_newlist_topleft1 fl">
+                <span class="newlist_topleft_zwlb1">
+                        职位类别
+                    </span>
+            </div>
+            <div class="search_newlist_topmain2 fl" id="search_jobtype_tag">
+                <a class="{tagInfo.JobType.class}" href="{tagInfo.JobType.url}">{tagInfo.JobType.name}</a>>&nbsp
+                {#tagInfo.JobType.list}
+                     {@eq key=type value="0"}
+                    <a href="{url}" class="{class}">
+                    {name}(<font color="red">{font}</font>)</a>>&nbsp
+                    {:else}
+                    <a href="{url}" class="{class}">
+                    {name}(<font color="red">{font}</font>)</a>
+                    {/eq}
+                {/tagInfo.JobType.list}
+            </div>
+            <div class="search_newlist_toplast2 fr" style="display:none" id="jobtypeswitch">
+                <a href="javascript:;"></a>
+            </div>
+        </div>
+    </div>
+    <!--工作地区-->
+    <div class="newlist_list1" style="{tagInfo.City.style}">
+        <div class="clearfix">
+            <div class="search_newlist_topleft1 fl">
+                <span class="newlist_topleft_zwlb1">
+                        工作地区
+                    </span>
+            </div>
+            <div class="search_newlist_topmain1 fl">
+                <a class="{tagInfo.City.class}" href="{tagInfo.City.url}" >{tagInfo.City.name}</a>
+                {#tagInfo.City.list}
+                    <a class="{class}" href="{url}">{name}</a>
+                {/tagInfo.City.list}
+            </div>
+        </div>
+    </div>
+    <!--热门地区-->
+    <div class="{tagInfo.Hot.outclass}" style="{tagInfo.Hot.style}">
+        <div class="clearfix">
+            <div class="search_newlist_topleft1 fl">
+                <span class="newlist_topleft_zwlb1">
+                        热门地区
+                    </span>
+            </div>
+            <div class="search_newlist_topmain1 fl" style="width:710px;height:34px">
+                <a class="{tagInfo.Hot.class}" href="{tagInfo.Hot.url}" >{tagInfo.Hot.name}</a>
+                {#tagInfo.Hot.list}
+                    <a class="{class}" href="{url}">{name}</a>
+                {/tagInfo.Hot.list}
+            </div>
+            <div class="newlist_metroswitch fr">
+                <a id="db_btn" class="newlist_metroswitchup" style="" href="javascript:;">地标导航</a>
+                <a id="metroswitch" class="newlist_metroswitchup" href="javascript:" style="">地铁沿线</a>
+                <div class="db_nav">
+                    <p class="clearfix placemark_trigger">
+                    <a style="background-color:#DADADA;" title="A" href="javascript:">A</a>
+                    <a style="" title="B" href="javascript:">B</a>
+                    <a style="" title="C" href="javascript:">C</a>
+                    <a style="" title="D" href="javascript:">D</a>
+                    <a style="" title="E" href="javascript:">E</a>
+                    <a style="" title="F" href="javascript:">F</a>
+                    <a style="" title="G" href="javascript:">G</a>
+                    <a style="" title="H" href="javascript:">H</a>
+                    <a style="" title="J" href="javascript:">J</a>
+                    <a style="" title="K" href="javascript:">K</a>
+                    <a style="" title="L" href="javascript:">L</a>
+                    <a style="" title="M" href="javascript:">M</a>
+                    <a style="" title="N" href="javascript:">N</a>
+                    <a style="" title="P" href="javascript:">P</a>
+                    <a style="" title="Q" href="javascript:">Q</a>
+                    <a style="" title="R" href="javascript:">R</a>
+                    <a style="" title="S" href="javascript:">S</a>
+                    <a style="" title="T" href="javascript:">T</a>
+                    <a style="" title="W" href="javascript:">W</a>
+                    <a style="" title="X" href="javascript:">X</a>
+                    <a style="" title="Y" href="javascript:">Y</a>
+                    <a style="" title="Z" href="javascript:">Z</a>
+                    </p>
+                    {#tagInfo.PlaceMark.list}
+                    <h1 id="{id}" class="placemark" style="display: none;">
+                        {#place}
+                            <a onclick="return switchTag(this,'{url}');" href="#">{name}</a>
+                        {/place}
+                    </h1>
+                    {/tagInfo.PlaceMark.list}
+                </div>
+            </div>
+        </div>
+        <div class="search_newlist_mainwrap" style="{tagInfo.Hot.place.style}">
+            <!--@Html.Raw(tagModel.Area)-->
+            {#tagInfo.Hot.place.list}
+                <span>[{char}]</span>&nbsp
+                {#list}
+                    <a class="{class}" onclick="return switchTag(this,'{url}');" href="#">{name}</a> 
+                {/list}
+            {/tagInfo.Hot.place.list}
+        </div>
+    </div>
+    <!--地铁沿线-->
+    <div class="{tagInfo.SubLine.outClass}" style="{tagInfo.SubLine.style}">
+        <div class="clearfix">
+            <div class="search_newlist_topleft1 fl">
+                <span class="newlist_topleft_zwlb1">
+                    地铁沿线
+                </span>
+            </div>
+            <div class="search_newlist_topmain1 fl">
+                <a id="nometro" class="{tagInfo.SubLine.class}" href="{tagInfo.SubLine.url}" >
+                    {tagInfo.SubLine.name}
+                </a>
+                {#tagInfo.SubLine.list}
+                    <a id="{id}" class="{class}" href="javascript:switchMetro('{id}')">{name}</a>
+                {/tagInfo.SubLine.list}
+                
+            </div>
+            <!--@Html.Raw(tagModel.Metro)-->
+        </div>
+        <div class="search_newlist_mainwrap">
+            {#tagInfo.SubLine.list}
+            <div class="{id} tagfilter_metrostation" style="{style}">
+                {#list}
+                    <a class="{class}" onclick="return switchTag(this,'{url}');" href="#">{name}</a> 
+                {/list}
+            </div>
+            {/tagInfo.SubLine.list}
+        </div>
+    </div>
+
+    <!--职位标签-->
+    <div class="newlist_list1" style="{tagInfo.JobTag.style}">
+        <div class="clearfix">
+            <div class="search_newlist_topleft1 fl">
+                <span class="newlist_topleft_zwlb1">
+                        职位标签
+                    </span>
+            </div>
+            <div class="search_newlist_topmain1 fl" style="{tagInfo.JobTag.instyle}">
+                <a class="{tagInfo.JobTag.class}" href="{tagInfo.JobTag.url}" >{tagInfo.JobTag.name}</a>
+                {#tagInfo.JobTag.list}
+                    <a class="{class}" href="{url}">{name}</a>
+                {/tagInfo.JobTag.list}
+            </div>
+            <div class="search_newlist_toplast1 fr" style="display:block;">
+                <a href="javascript:;"></a>
+            </div>
+        </div>
+    </div>
+    <!--更多条件搜索-->
+    <div class="newlist_moresearch">
+        <div class="clearfix">
+            <div class="moresearch_left fl">更多筛选</div>
+            <div class="moresearch_main fl">
+                <ul>
+                    {#tagInfo.More}
+                    <li style="{style}" class="{class}">
+                        <p class="{inclass}" style="{instyle}">{name}</p>
+                        <div style="display: none;">
+                            {#tag}
+                            {@eq key=name value="全部"}
+                                <a class="{class}" href="{url}">不限</a>
+                            {:else}
+                                <a class="{class}" href="{url}">{name}</a>
+                            {/eq}
+                            {/tag}
+                        </div>
+                    </li>
+                    {/tagInfo.More}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    /*标签筛选*/
+    function switchMetro(flag) {
+        $(".tagfilter_metro").removeClass("xzbold");
+        $("#" + flag).addClass("xzbold");
+        $("#" + flag).parents('.newlist_list1').addClass('newlist_list1_zk');
+        $("#" + flag).parents('.newlist_list1').removeClass('newlist_list1');
+        $(".tagfilter_metrostation").hide();
+        $("." + flag).show();
+    }
+
+    function switchTag(e,url) {
+        e.href = url;
+        return true;
+    }
+
+    $(document).ready(function() {
+        /*地铁折叠*/
+        var metroOpen = $.cookie('metroopen');
+        if (metroOpen == "1") {
+            $('.newlist_metro').show();
+            $('#metroswitch').removeClass("newlist_metroswitchup").addClass("newlist_metroswitchdown");
+        } else {
+            $('.newlist_metro').hide();
+            $('#metroswitch').removeClass("newlist_metroswitchdown").addClass("newlist_metroswitchup");
+        }
+        $('#metroswitch').click(function() {
+            var metroDisplay = $('.newlist_metro').css("display");
+            if (metroDisplay == "none") {
+                $.cookie('metroopen', '1', {
+                    expires: 30,
+                    path: '/'
+                });
+                $('.newlist_metro').slideDown(500);
+                $(this).removeClass("newlist_metroswitchup").addClass("newlist_metroswitchdown");
+            } else {
+                $.cookie('metroopen', '0', {
+                    expires: 30,
+                    path: '/'
+                });
+                if ($('#c23').val() == "") {
+                    $('.newlist_metro').slideUp(500);
+                    $(this).removeClass("newlist_metroswitchdown").addClass("newlist_metroswitchup");
+                } else {
+                    location.href = $("#nometro").attr("href");
+                }
+            }
+        });
+        /*职位类别折叠*/
+        var jobtype_tag = $("#search_jobtype_tag");
+        if (jobtype_tag.length > 0) {
+            var jobtypeOpen = $.cookie('jobtypeopen');
+            var height = jobtype_tag.css("height").replace("px", "");
+            if (height > 68) {
+                $("#search_jobtype_tag").next().show();
+                if (jobtypeOpen == "0" || $('#c6').val() == "")
+                    $("#search_jobtype_tag").css("height", "68px");
+            } else {
+                $("#search_jobtype_tag").next().hide();
+            }
+        }
+        $('#jobtypeswitch').click(function() {
+            var height = $("#search_jobtype_tag").css("height").replace("px", "");
+            if (height == 68) {
+                $.cookie('jobtypeopen', '1', {
+                    expires: 30,
+                    path: '/'
+                });
+                $("#search_jobtype_tag").css("height", "auto");
+            } else {
+                $.cookie('jobtypeopen', '0', {
+                    expires: 30,
+                    path: '/'
+                });
+                $("#search_jobtype_tag").css("height", "68px");
+            }
+        });
+    })
+</script>

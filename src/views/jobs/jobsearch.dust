@@ -1,0 +1,170 @@
+{>"layouts/master" /}
+
+{<HeadMeta}
+{#seoInfo}
+ <title>{headMeta.title}</title>
+<meta name="keywords" content="{headMeta.keywords}">
+<meta name="description" content="{headMeta.description}">
+{/seoInfo}
+{/HeadMeta}
+
+{<Style}
+    {@cssloader file="/css/searchlist.min.css,/css/search_newlist.css"}{/cssloader}
+{/Style}
+
+{<DebugInfo}
+{#debugInfo}
+{.|s}<br/>
+{/debugInfo}
+{/DebugInfo}
+
+{<Body}
+<div class="Search-box">
+    <div class="Search-boxtop">
+    </div>
+    <div class="search" style="padding-bottom: 10px;">
+        <div id="funSearch">
+            <div id="searchForm">
+                <form name="frmSearch" method="get" action="/jobs/searchresult.ashx" autocomplete="off"
+                      onsubmit="return zlzp.searchjob.gotoSearch_t()">
+                    {#searchInfo}
+                    <input type="hidden" id="c1" name="FilterLocation" value="{FilterLocation}" />
+                    <input type="hidden" id="c2" name="IsFilter" value="{IsFilter}" />
+                    <input type="hidden" id="c3" name="FilterJobTag" value="{FilterJobTag}" />
+                    <input type="hidden" id="c4" name="page" value="{Page}" />
+                    <input type="hidden" id="c5" name="SchJobType" value="{JobType}" />
+                    <input type="hidden" id="c6" name="subJobtype" value="{SubJobType}" />
+                    <input type="hidden" id="c7" name="location" value="{JobLocation}" />
+                    <input type="hidden" id="c8" name="industry" value="{Industry}" />
+                    <input type="hidden" id="c9" name="Release-time" value="{PublishDate}" />
+                    <input type="hidden" id="c10" name="WorkingExp" value="{WorkingExp}" />
+                    <input type="hidden" id="c11" name="EduLevel" value="{EduLevel}" />
+                    <input type="hidden" id="c12" name="CompanyType" value="{CompanyType}" />
+                    <input type="hidden" id="c13" name="CompanySize" value="{CompanySize}" />
+                    <input type="hidden" name="keywordtype" id="kt" value="{KeyWordType}" />
+                    <input type="hidden" id="c15" name="sortby" value="{SortBy}" />
+                    <input type="hidden" id="c16" name="ShowMode" value="{ShowMode}" />
+                    <input type="hidden" id="c17" name="SchSalaryFromAdv" value="{SalaryFrom}" />
+                    <input type="hidden" id="c18" name="SchSalaryToAdv" value="{SalaryTo}" />
+                    <input type="hidden" id="c19" name="EmplType" value="{EmplType}" />
+                    <input type="hidden" id="c20" name="reg" value="{Region}" />
+                    <input type="hidden" id="c21" name="geo_r" value="{GeoRadius}" />
+                    <input type="hidden" id="c22" name="geo_cat" value="{GeoCenterCate}" />
+                    <input type="hidden" id="c23" name="geo_addr" value="{GeoAddress}" />
+                    <input type="hidden" name="ref" value="jobsearch" />
+                    <input type="hidden" name="f_kw" value="" />
+                    <input type="hidden" name="isadv" id="isadv" value="0" />
+                    <input type="hidden" name="adgroups" id="adgroups" value="{AdGroups}" />
+                    <div class="industry industry-small">
+                        <span>职位类别</span>
+                        <input type="button" id="buttonSelJobType" name="buttonSelJobType" value="选择职位" title="选择职位类别" />
+                    </div>
+                    <div class="job job-small">
+                        <span>行业类别</span>
+                        <input type="button" id="buttonSelIndustry" name="buttonSelIndustry" value="选择行业"
+                               title="选择行业类别" />
+                    </div>
+                    <div class="keyword keyword-small">
+                        <span class="keyword-tab">
+                            <a href="#" class="current">全文</a><a href="#">公司名</a><a href="#">职位名</a>
+                        </span>
+                        <input type="text" name="KeyWord" id="KeyWord_kw2" maxlength="100" sjmodule="AutoComplete"
+                               xhrasp="" xhrstyle="k" submitform="1" iskeyword="1" value="{KeyWords}" autocomplete="off" />
+                    </div>
+                    <div class="city2 city-small">
+                        <span>工作地点</span>
+                        <input type="text" id="JobLocation" name="JobLocation" value="{JobLocationCN}" /><input type="button" class="search-citybtn" id="buttonSelCity" name="buttonSelCity" />
+                    </div>
+                    <div class="slideUp">
+                    </div>
+                    <div class="searchbtn searchbtn-small" style="width:350px;">
+                        <button class="doesSearch" type="submit" onclick="resetCondition();return submitfrom();"></button>
+                        <a href="/jobs/searchresult.ashx?isadv=1">高级搜索</a> <a href="http://xiaoyuan.zhaopin.com/FindFullTime/FullTimeSearch/Index" target="_blank" onclick="dyweTrackEvent('LuGA$Other', 'XYsou01');">学生职位搜索</a>
+                    </div>
+                    <a href="/jobs/searchresult.ashx" class="newlist_reset fr">重置</a>
+                    <dl class="clearfix"></dl>
+                    {/searchInfo}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="search_newlist_main">
+    {@ne key=tagInfo.display value=0}
+        {>"partial/tagfilterbar" tagInfo=tagInfo /}
+    {/ne}
+    {>"partial/conditionbar" searchData=searchData/}
+    <div class="newlist_main">
+        <form name="frmMain" method="get" style="margin: 0;">
+         <div class="clearfix">
+             
+{>"partial/searchlist" searchInfo=searchInfo exposureData=exposureData searchresult=searchresult complementResult=complementResult brandInfo=brandInfo pagination=pagination/}
+              
+            <div class="newlist_right_code fr">
+                    {>"partial/offsideadbar"/}
+            </div>
+            </div>
+            <div class="interested-thing" style="width:853px;">
+                <h4>
+                    你也许还对这些感兴趣
+                </h4>
+                <ul>
+                    {>"partial/seolink" seoInfo=seoInfo/}
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+{@eq key=searchInfo.IsHasSearchResult value="true" type="boolean"}
+{>"partial/excludecompany" companys=exposureData.companys/}
+{/eq}
+{/Body}
+
+{<Snippet}
+    <div class="sou-collect" id="sou-collect">
+        <div class="collect-title" id="sou-collect-title">
+            收藏成功<!-- 此职位已收藏-->
+        </div>
+        <div class="collect-content" id="sou-collect-content">
+            您可以在<a href="http://my.zhaopin.com/myzhaopin/jobmng_fav.asp" target="_blank">职位收藏夹</a>中查看
+        </div>
+    </div>
+{/Snippet}
+
+{<OffsideFloat}
+{@eq key=searchInfo.IsHasSearchResult value="true" type="boolean"}
+        <span><a href="javascript:void(0) " class="del_company">排除公司<b class="f_number  m_left3"></b></a></span>
+{/eq}
+{/OffsideFloat}
+
+{<FootScript}
+    {@jsloader file="/js/jobsearch.min.js,/js/regFormVal.js,/js/searchList.js,/js/searchjob.init.js,/js/searchresult.js,/js/jquery.cookie.js,/js/sou_list.js,/js/searchLog.js"}{/jsloader}
+    
+    <script type="text/javascript">
+        function resetCondition() {
+            $('#c1,#c2,#c3,#c4,#c9,#c10,#c11,#c12,#c13,#c15,#c16,#c17,#c18,#c19,#c20,#c21,#c22,#c23').val('');
+        }
+        var count = $('.search_yx_tj').find('em').text();
+        var url4zpAnalytics = document.location.pathname + document.location.search + '&rt=' + count;
+
+        function dyweTrackEventExpo(category, action, ids) {
+            function ed(d, a) {
+                var c = encodeURIComponent;
+                return c instanceof Function ? (a ? encodeURI(d) : c(d)) : escape(d);
+            }
+
+            var i = new Image(1, 1);
+            var e = document.location;
+            i.src = "http://l.zhaopin.com/track_err.gif?dywee=5(" + category + "*"
+                + action + ")&dywehn=" + ed(e.hostname) + "&expo=" + ids;
+        }
+
+        $(document).ready(function () {
+            if (document.getElementById("vacancyids")) {
+                var vacancyids = document.getElementById("vacancyids").value;
+                dyweTrackEventExpo('jobs', 'expo', vacancyids);
+            }
+        });
+    </script>
+    
+{/FootScript}

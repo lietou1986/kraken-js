@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {+HeadMeta/}
+    <link rel="shortcut icon" type="image/ico" href="http://img00.zhaopin.cn/new2011/images/ie9.ico" />
+    <link rel="dns-prefetch" href="//img00.zhaopin.cn" />  
+    <link rel="dns-prefetch" href="//img01.zhaopin.cn" />
+    <link rel="dns-prefetch" href="//img02.zhaopin.cn" />
+    <link rel="dns-prefetch" href="//image.highpin.cn" />
+    <link rel="dns-prefetch" href="//l.zhaopin.com" />
+    <link rel="dns-prefetch" href="//img06.zpin.net.cn" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+     {@cssloader file="/css/core.min.css,/css/job_search.css,/css/jquery.autocomplete.css"}{/cssloader}
+    <link type="text/css" rel="stylesheet" href="http://img00.zhaopin.cn/2012/css/reset.min.css" />
+    <link type="text/css" rel="stylesheet" href="http://img00.zhaopin.cn/2012/other/search/css/pop.css" />
+    <link type="text/css" rel="stylesheet" href="http://img00.zhaopin.cn/2012/other/search/css/search0528.css" />
+    <link type="text/css" rel="stylesheet" href="http://img01.zhaopin.cn/2012/other/lmadjust/css/adbox_s.css" />
+    <script type="text/javascript" src="http://img01.zhaopin.cn/2012/js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="http://img02.zhaopin.cn/2014/common/js/zpidc.utils.js"></script>
+    <script type="text/javascript" src="http://img01.zhaopin.cn/2014/common/js/zpidc.login.js"></script>
+    <script type="text/javascript">
+        var navIndex = 2;
+    </script>
+    {+Style/}
+    {+HeadScript/}
+</head>
+<body>
+    {+DebugInfo/}
+    {>"partial/head" /}
+    {>"partial/notice" /}
+    <div class="main" style="position: relative;">
+        <!--微信 开始-->
+        <div class="wechat"><img src="http://img01.zhaopin.cn/2014/c/img/search_erweima.jpg?v=1" width="121px" height="180px" style="margin-left:4px;" /></div>
+        <!--微信 结束-->
+         {+Body/}
+        <div class="div_01_main">
+            <div class="btn_right_font font14" id="div_01">
+                {+OffsideFloat/}
+                <span id="go_top_layer" class="dsp_none">
+                    <a href="javascript:void(0) " class="back_top">
+                        返回顶部
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+    {+Snippet/}
+    <script type="text/javascript" src="http://img01.zhaopin.cn/2012/js/ui/jquery.zlzp.popupbase.js"></script>
+    {@jsloader file="/js/core.min.js,/js/jquery.ui.autocomplete.js,/js/searchChangeV2.js,/js/cityautocomplete.js"}{/jsloader}
+    <script type="text/javascript" src="http://img01.zpin.net.cn/2014/seo/js/addHrefParams.js"></script>
+   
+    {+FootScript/}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(window).bind("scroll resize load", function () {
+                var bodyScrollTop = $(window).scrollTop();
+                if (bodyScrollTop == 0) {
+                    $("#go_top_layer").hide();
+                } else {
+                    $("#go_top_layer").show();
+                }
+            });
+            $(".back_top").click(
+                function () {
+                    $('html,body').animate({ scrollTop: 0 }, 300);
+                });
+        });
+    </script>
+    {+OtherSnippet/}
+    {>"partial/analyticsjs" /}
+    {>"partial/foot" /}
+    {+FootSnippet/}
+    <script type="text/javascript" src="http://image.highpin.cn/js/link/zp_link_hp.js"></script>
+</body>
+</html>

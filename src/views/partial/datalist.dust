@@ -1,0 +1,84 @@
+
+            {@eq key=searchInfo.ShowModel value=0} 
+            {#results}
+            <table cellpadding="0" cellspacing="0" width="853" class="newlist">
+                <tr>
+                    <td class="zwmc" style="width: 250px;">
+                        <input type="checkbox" name="vacancyid" value="{number}{batchApplyFlag}" onclick="zlapply.uncheckAll('allvacancyid')" />
+                        <div style="width: 224px;*width: 218px; _width:200px; float: left">
+                            {jyywlLink|s}<a style="font-weight: bold" par="{exposurePara}" href="{positionURL}" target="_blank">{jobName|s}{topLink|s}</a>
+                        </div>
+                    </td>
+                    <td style="width: 60px;" class="fk_lv"><span>{feedbackRation}</span></td>
+                    <td class="gsmc"><a href="{company.url}" target="_blank">{company.name|s}{bestLink|s}{drxLink|s}</a></td>
+                    <td class="zwyx">{salary.display}</td>
+                    <td class="gzdd">{city.display}</td>
+                    <td class="gxsj"><span>{displayDate}</span>
+                        <a class="newlist_list_xlbtn" href="javascript:;"></a>
+                    </td>
+                </tr>
+                <tr style="display: none" class="newlist_tr_detail">
+                    <td width="833px" style="line-height: 0;" colspan="6">
+                        <div class="newlist_detail">
+                            <div class="clearfix">
+                                <ul>
+                                    <li class="newlist_deatil_two">
+                                        <span>地点：{city.display}</span>
+                                        <span>公司性质:{company.type.name}</span>
+                                        <span>公司规模:{company.size.name}</span>
+                                        <span>学历:{eduLevel.name}</span>
+                                        <span>职位月薪：{salary.display}</span>
+                                        </li>
+                                        <li class="newlist_deatil_last">{jobDesc|s}</li>
+                                </ul>
+                                <dl>
+                                    <dt>
+                                        <a href="javascript:void(0)" onclick="return zlapply.searchjob.ajaxApplyBrig1('{number}','ssi','{applyFlag}')">
+                                            <img src="/images/newlist_sqimg_03.jpg" />
+                                        </a>
+                                    </dt>
+                                    <dd>
+                                        <a href="javascript:zlapply.searchjob.saveOne('{number}')"><img src="/images/newlist_scimg_06.jpg" /></a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                </tr>
+            </table>
+            {/results}
+            {:else}
+              
+            {#results}
+            <div class="newlist_detail newlist">
+                <div class="clearfix">
+                    <ul>
+                        <li class="newlist_deatil_first clearfix zwmc"><input type="checkbox" name="vacancyid" value="{number}{batchApplyFlag}" onclick=" zlapply.uncheckAll('allvacancyid') " />
+                            {jyywlLink|s}<div style="width:300px;float:left"><a style="font-weight: bold" par="{exposurePara}" href="{positionURL}" target="_blank">{jobName|s}{topLink|s}</a></div>
+                        </li>
+                        <li class="newlist_deatil_three gsmc"><a href="{company.url}" target="_blank">{company.name|s}{bestLink|s}{drxLink|s}</a></li>
+                        <li class="newlist_deatil_two">
+                            <span>地点：{city.display}</span>
+                            <span>公司性质:{company.type.name}</span>
+                            <span>公司规模:{company.size.name}</span>
+                            <span>学历:{eduLevel.name}</span>
+                            <span>职位月薪：{salary.display}</span>
+                            </li>
+                            <li class="newlist_deatil_last">{jobDesc|s}</li>
+                        </li>
+                    </ul>
+                    <dl>
+                        <p>{displayDate}</p>
+                        <dt>
+                                        <a href="javascript:void(0)" onclick="return zlapply.searchjob.ajaxApplyBrig1('{number}', 'ssi' , '{applyFlag}' ) ">
+                                            <img src="/images/newlist_sqimg_03.jpg" />
+                                        </a>
+                                    </dt>
+                        <dd>
+                            <a href="javascript:zlapply.searchjob.saveOne('{PositionID_Html}')"><img src="/images/newlist_scimg_06.jpg" /></a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            {/results} 
+            {/eq}
+      

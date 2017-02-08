@@ -1,0 +1,49 @@
+<ul>
+    <li id="adcontainer">
+    </li>
+     <li>
+        <a href="http://special.zhaopin.com/2016/bf/pxhy090750/jobs.html" target="_blank" onclick="javascript:dyweTrackEvent('soujoblist','rightsidead20161205');">
+            <img src="/images/offsidead/20161205.gif?verion=20161205" />
+        </a>
+    </li>
+    <li>
+        <a href="https://www.wenjuan.com/s/MRrq2y/" target="_blank" onclick="javascript:dyweTrackEvent('soujoblist','rightsidead20161201');">
+            <img src="/images/offsidead/20161201.jpg?verion=20161201" />
+        </a>
+    </li>	
+	<li>
+        <a href="http://cnt.zhaopin.com/Market/whole_counter.jsp?sid=121127315&site=ssjg&url=http://it.zhaopin.com/" target="_blank" onclick="javascript:dyweTrackEvent('soujoblist','rightsidead20161114');">
+            <img src="/images/offsidead/20161114.jpg?verion=20161118" />
+        </a>
+    </li>
+	<li>
+        <a href="http://cnt.zhaopin.com/Market/whole_counter.jsp?sid=121127436&site=sou&url=http://liaoliao.zhaopin.com" target="_blank" onclick="javascript:dyweTrackEvent('soujoblist','rightsidead20161103');">
+            <img src="/images/offsidead/20161103.gif?verion=20161203" />
+        </a>
+    </li>
+     <li>
+        <a href="http://cnt.zhaopin.com/Market/whole_counter.jsp?sid=121126401&site=sou&url=http://best.zhaopin.com" target="_blank" onclick="javascript:dyweTrackEvent('soujoblist','rightsidead20160802');">
+            <img src="/images/offsidead/20160802.jpg?verion=20161118" />
+        </a>
+    </li>	
+    <li>
+        <a href="http://kanzhao.zhaopin.com/" target="_blank" onclick="javascript:dyweTrackEvent('soujoblist','rightsidead20151012');">
+            <img src="/images/offsidead/20151012.jpg" />
+        </a>
+    </li>
+     <li>
+        <a href="http://hr.highpin.cn" target="_blank" onclick="javascript:dyweTrackEvent('soujoblist','rightsidead20151028');">
+            <img src="/images/offsidead/20151028.jpg" />
+        </a>
+    </li>
+</ul>
+{@jsloader file="/js/zpad.min.js,/js/store.min.js,/js/zpad.js"}{/jsloader}
+<script type="text/javascript">
+    $(document).ready(function() {
+        if (window.zpad) {
+            window.zpad.init(function(data) {
+                $('#adcontainer').html(data);
+            })
+        }
+    })
+</script>

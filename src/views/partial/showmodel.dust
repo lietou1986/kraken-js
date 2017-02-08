@@ -1,0 +1,6 @@
+<span>显示方式：</span>   
+{@eq key=searchInfo.ShowModel value=1}
+<a href="javascript:zlapply.searchjob.setSearchModel('0')" class="newlist_awrap">列表</a> <a class="newlist_alist_hover">详细</a>
+ {:else}
+<a class="newlist_alist_hover">列表</a> <a href="javascript:zlapply.searchjob.setSearchModel('1')" class="newlist_awrap">详细</a>
+ {/eq}

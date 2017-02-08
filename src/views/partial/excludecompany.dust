@@ -1,0 +1,115 @@
+<div class="div_02_main">
+    <div class="alert_box" id="div_02" style="display: none">
+        <div class="alert_cont">
+            <div>
+                <span class="al_tit01 f_array01 f_left">公司被排除后，公司所有职位都将不再出现在搜索结果中。请慎重使用该功能</span>
+                <a id="close_com_layer" href="javascript:void(0) " class="alt_close01 f_right"></a>
+                <div class="clr">
+                </div>
+            </div>
+            <div class="alt_select m_top5 m_bottom10">
+                <select id="box_select_company" name="" class="box_select01 f_left" onchange="unit_layer.onSelect_limit();">
+                <option>请选择要排除的公司</option>
+            </select>
+                <input type="button" value="" id="close_save_com_layer" class="btn_submit01 f_left m_left10 __ga__button_forbidcompwithsou_forbidcomp_forbid_001" />
+            </div>
+            <div class="line_bottom m_right10 ">
+                <span class="f_left  font12 f_black">已排除的公司<b id="remove_com_num" class="f_red01 m_left10 font12 f_nor"></b>/5</span>
+                <span class="f_right font12 f_array01">最多可排除5家公司</span>
+                <div class="clr">
+                </div>
+            </div>
+            <div class="com_name_cont m_top10 ">
+                <ul class="com_name_ul">
+                    <li class="dsp_none">
+                        <a class="com_name f_black com_bg">
+                            <i class="alt_close02 __ga__i_forbidcompwithsou_cancelfc_cancel_001">
+                        </i>
+                        </a>
+                    </li>
+                    <li class="dsp_none">
+                        <a class="com_name f_black com_bg">
+                            <i class="alt_close02 __ga__i_forbidcompwithsou_cancelfc_cancel_002">
+                        </i>
+                        </a>
+                    </li>
+                    <li class="dsp_none">
+                        <a class="com_name f_black com_bg">
+                            <i class="alt_close02 __ga__i_forbidcompwithsou_cancelfc_cancel_003">
+                        </i>
+                        </a>
+                    </li>
+                    <li class="dsp_none">
+                        <a class="com_name f_black com_bg">
+                            <i class="alt_close02 __ga__i_forbidcompwithsou_cancelfc_cancel_004">
+                        </i>
+                        </a>
+                    </li>
+                    <li class="dsp_none">
+                        <a class="com_name f_black com_bg">
+                            <i class="alt_close02 __ga__i_forbidcompwithsou_cancelfc_cancel_005">
+                        </i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{@jsloader file="/js/excludecompany.min.js,/js/hashmap.js,/js/tools.js,/js/company-layer.js"}{/jsloader}
+<script type="text/javascript">
+var companys=[],excludeCompanys = [];
+var exposureMap = new HashMap(),companyMap = new HashMap();
+{#companys}
+      companys.push({id:'{id}',name:'{name}'});         
+{/companys}
+for (var i in companys) {
+            var company = companys[i];
+            var companyId = company.id;
+          
+            if (!companyMap.has(companyId)) {
+                companyMap.set(companyId, company.name);
+            }
+
+            var exposureCount = exposureMap.get(companyId);
+            if (exposureCount) {
+                exposureCount += 1;
+            }
+            else {
+                exposureCount = 1;
+            }
+            exposureMap.set(companyId, exposureCount);
+        }
+        companyMap.forEach(function (value, key) {
+            if (exposureMap.get(key) > 1)
+                excludeCompanys.push({ id: key, name: value });
+        });
+
+        excludeCompanys= sortObj(excludeCompanys);
+        for(var i=0,j=excludeCompanys.length;i<j;i++){
+      var c=excludeCompanys[i];
+      $('<option c_name="'+c.name+'" value="'+c.id+'">'+c.name+'</option>').appendTo('#box_select_company');
+  }
+</script>
+<script type="text/javascript">
+    /*排除公司*/
+    $(document).ready(function() {
+        $(".del_company").click( 
+            function() {
+                var jqalertbox = $(".alert_box").get(0);
+
+                if ($(".alert_box")[0].style.display == "none") {
+                    $(".alert_box").show();
+                    if (unit_layer != undefined) {
+                        unit_layer.init_remove_comps();
+                    }
+                    dyweTrackEvent('forbidcompwithsou', 'showfcdiv');
+                }
+            });
+        $(".alt_close01").click( 
+            function() {
+                $(".alert_box").hide();
+                dyweTrackEvent('forbidcompwithsou', 'cancelfc');
+            });
+    });
+</script>

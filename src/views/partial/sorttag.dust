@@ -1,0 +1,38 @@
+{@eq key=searchInfo.IsUseResumeMatch value="true" type="boolean"}
+ {@select key=searchInfo.SortBy} 
+
+ {@eq value=1}
+<a href="javascript:dyweTrackEvent('searchresultTab', 'clickdefault');zlapply.searchjob.sortBy('0')">默认顺序</a> <a href="javascript:dyweTrackEvent('searchresultTab', 'clickmatch');zlapply.searchjob.sortBy('3')">最匹配</a> <a class="xxk">相关度</a> <a href="javascript:dyweTrackEvent('searchresultTab', 'clickfirstday');zlapply.searchjob.sortBy('2')">首发日</a>
+{/eq} 
+{@eq value=2}
+
+<a href="javascript:dyweTrackEvent('searchresultTab', 'clickdefault');zlapply.searchjob.sortBy('0')">默认顺序</a> <a href="javascript:dyweTrackEvent('searchresultTab', 'clickmatch');zlapply.searchjob.sortBy('3')">最匹配</a> <a href="javascript:dyweTrackEvent('searchresultTab', 'clickrelevant');zlapply.searchjob.sortBy('1')">相关度</a><a class="xxk">首发日</a>
+ {/eq} 
+ {@eq value=3}
+
+<a href="javascript:dyweTrackEvent('searchresultTab', 'clickdefault');zlapply.searchjob.sortBy('0')">默认顺序</a> <a class="xxk">最匹配</a> <a href="javascript:dyweTrackEvent('searchresultTab', 'clickrelevant');zlapply.searchjob.sortBy('1')">相关度</a> <a href="javascript:dyweTrackEvent('searchresultTab', 'clickfirstday');zlapply.searchjob.sortBy('2')">首发日</a>
+{/eq}
+ {@none}
+<a class="xxk">默认顺序</a> <a href="javascript:dyweTrackEvent('searchresultTab', 'clickmatch');zlapply.searchjob.sortBy('3')">最匹配</a> <a href="javascript:dyweTrackEvent('searchresultTab', 'clickrelevant');zlapply.searchjob.sortBy('1')">相关度</a> <a href="javascript:dyweTrackEvent('searchresultTab', 'clickfirstday');zlapply.searchjob.sortBy('2')">首发日</a>
+{/none} 
+
+{/select}
+
+{:else}
+
+ {@select key=searchInfo.SortBy} 
+ {@eq value=1}
+<a href="javascript:dyweTrackEvent('searchresultTab', 'clickdefault');zlapply.searchjob.sortBy('0')">默认顺序</a> <a class="xxk">相关度</a> <a href="javascript:dyweTrackEvent('searchresultTab', 'clickfirstday');zlapply.searchjob.sortBy('2')">首发日</a> 
+{/eq} 
+{@eq value=2}
+
+<a href="javascript:dyweTrackEvent('searchresultTab', 'clickdefault');zlapply.searchjob.sortBy('0')">默认顺序</a> <a href="javascript:dyweTrackEvent('searchresultTab', 'clickrelevant');zlapply.searchjob.sortBy('1')">相关度</a> <a class="xxk">首发日</a>
+ {/eq}
+{@none}
+<a class="xxk">默认顺序</a> <a href="javascript:dyweTrackEvent('searchresultTab', 'clickrelevant');zlapply.searchjob.sortBy('1')">相关度</a> <a href="javascript:dyweTrackEvent('searchresultTab', 'clickfirstday');zlapply.searchjob.sortBy('2')">首发日</a>
+ {/none}
+ {/select}
+
+{/eq} 
+
+

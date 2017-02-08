@@ -1,0 +1,14 @@
+{
+  "generator-kraken": {
+    "taskModule": "grunt",
+    "lintModule": "eslint",
+    "description": "new site for sou.zhaopin.com by nodejs",
+    "author": "len.zhang@zhaopin.com.cn",
+    "templateModule": "dustjs",
+    "i18n": false,
+    "componentPackager": "bower",
+    "cssModule": false,
+    "jsModule": false,
+    "useJson": null
+  }
+}

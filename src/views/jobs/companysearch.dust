@@ -1,0 +1,273 @@
+{>"layouts/master" /}
+
+{<HeadMeta}
+<title>招聘（求职）尽在智联招聘</title>
+    <meta name="keywords" content="招聘,找工作,职位搜索">
+    <meta name="description" content="智联招聘为求职者找工作提供最新最全的职位招聘信息,并通过地点,行业,职位,薪资等搜索出适合您的职位,帮您快速锁定身边的好工作。">
+{/HeadMeta}
+
+{<Style}
+{@cssloader file="/css/searchlist.min.css,/css/search_newlist.css"}{/cssloader}
+    <style>
+        .company_logo img {
+            width: 150px;
+            height: 100px;
+        }
+    </style>
+{/Style}
+
+{<DebugInfo}
+{#debugInfo}
+{.|s}<br/>
+{/debugInfo}
+{/DebugInfo}
+
+{<Body}
+<div class="Search-box">
+    <div class="Search-boxtop">
+    </div>
+    <div class="search" style="padding-bottom: 10px;">
+        <div id="funSearch">
+            <div id="searchForm">
+                <form name="frmSearch" method="get" onsubmit="return zlzp.searchjob.gotoSearch_t()"
+                      action="/jobs/searchresult.ashx">
+                         {#searchInfo}
+                    <input type="hidden" name="page" value="{Page}" />
+                    <input type="hidden" name="SchJobType" value="{JobType}" />
+                    <input type="hidden" name="subJobtype" value="{SubJobType}" />
+                    <input type="hidden" name="location" value="{JobLocation}" />
+                    <input type="hidden" name="industry" value="{Industry}" />
+                    <input type="hidden" name="PublishDate" id="PublishDate" value="{PublishDate}" />
+                    <input type="hidden" name="WorkingExp" value="{WorkingExp}" />
+                    <input type="hidden" name="EduLevel" value="{EduLevel}" />
+                    <input type="hidden" name="CompanyType" value="{companyInfo.companyType}" />
+                    <input type="hidden" name="CompID" value="{CompanyID}" />
+                    <input type="hidden" name="CompanySize" value="{companyInfo.companySize}" />
+                    <input type="hidden" name="keywordtype" id="kt" value="{KeyWordType}" />
+                    <input type="hidden" name="sortby" value="{SortBy}" />
+                    <input type="hidden" name="SearchModel" value="{ShowMode}" />
+                    <input type="hidden" name="SalaryFrom_h" value="{SalaryFrom}" />
+                    <input type="hidden" name="SalaryTo_h" value="{SalaryTo}" />
+                    <input type="hidden" name="EmplType_h" value="{EmplType}" />
+                    <input type="hidden" name="ref" value="jobsearch" />
+                    <input type="hidden" name="f_kw" value="" />
+                    <input type="hidden" name="isadv" id="isadv" value="1" />
+                    <input type="hidden" name="adgroups" id="adgroups" value="{AdGroups}" />
+                    <div class="industry industry-small">
+                        <span>职位类别</span>
+                        <input type="button" id="buttonSelJobType" name="buttonSelJobType" value="选择职位" title="选择职位" />
+                    </div>
+                    <div class="job job-small">
+                        <span>行业类别</span>
+                        <input type="button" id="buttonSelIndustry" name="buttonSelIndustry" value="选择行业"
+                               title="选择行业" />
+                    </div>
+                    <div class="keyword keyword-small">
+                        <span class="keyword-tab">
+                            <a href="#" class="current">全文</a><a href="#">公司名</a><a href="#">职位名</a>
+                        </span>
+                        <input type="text" name="KeyWord" id="KeyWord_kw2" maxlength="100" sjmodule="AutoComplete"
+                               xhrasp="" xhrstyle="k" submitform="1" iskeyword="1" value="{KeyWords}" autocomplete="off" />
+                    </div>
+                    <div class="city2 city-small">
+                        <span>工作地点</span>
+                        <input type="text" id="JobLocation" name="JobLocation" value="{JobLocationCN}" /><input type="button" class="search-citybtn" id="buttonSelCity" name="buttonSelCity" />
+                    </div>
+                    <div id="moreoption">
+                        <div class="workingtime workingtime-small">
+                            <span>工作经验</span>
+                            <input type="button" id="buttonSelWorkingTime" name="buttonSelWorkingTime" value="不限"
+                                   title="不限" />
+                        </div>
+                        <div class="degree degree-small">
+                            <span>学历要求</span>
+                            <input type="button" id="buttonSelDegree" name="buttonSelDegree" value="不限" title="不限" />
+                        </div>
+                        <div class="Salary-range Salary-range-long">
+                            <span>月薪范围</span>
+                            <select name="SchSalaryFromAdv">
+                                <option value="0">0</option>
+                                <option value="1000">1000</option>
+                                <option value="1500">1500</option>
+                                <option value="2000">2000</option>
+                                <option value="3000">3000</option>
+                                <option value="4000">4000</option>
+                                <option value="5000">5000</option>
+                                <option value="6000">6000</option>
+                                <option value="8000">8000</option>
+                                <option value="10000">10000</option>
+                                <option value="15000">15000</option>
+                                <option value="20000">20000</option>
+                                <option value="30000">30000</option>
+                                <option value="50000">50000</option>
+                            </select>&nbsp;到&nbsp;<select name="SchSalaryToAdv">
+                                <option value="">－不限－</option>
+                                <option value="1000">1000</option>
+                                <option value="1500">1500</option>
+                                <option value="2000">2000</option>
+                                <option value="3000">3000</option>
+                                <option value="4000">4000</option>
+                                <option value="5000">5000</option>
+                                <option value="6000">6000</option>
+                                <option value="8000">8000</option>
+                                <option value="10000">10000</option>
+                                <option value="15000">15000</option>
+                                <option value="20000">20000</option>
+                                <option value="30000">30000</option>
+                                <option value="50000">50000</option>
+                            </select>（人民币）
+                        </div>
+                        <div class="time time-small">
+                            <span>发布时间</span>
+                            <select id="Release-time">
+                                <option value="">所有时间</option>
+                                <option value="1">今天</option>
+                                <option value="3">最近三天</option>
+                                <option value="7">最近一周</option>
+                                <option value="30">最近一个月</option>
+                            </select>
+                        </div>
+                        <div class="comptype comptype-small">
+                            <span>公司性质</span>
+                            <input type="button" id="buttonSelComptype" name="buttonSelComptype" value="不限" title="不限" />
+                        </div>
+                        <div class="compsize compsize-small">
+                            <span>公司规模</span>
+                            <input type="button" id="buttonSelCompsize" name="buttonSelCompsize" value="不限" title="不限" />
+                        </div>
+                        <div class="job-category job-category-small">
+                            <span>职位类型</span>
+                            <label class="category">
+                                <input type="checkbox" name="EmplType" />全职
+                            </label>
+                            <label class="category">
+                                <input type="checkbox" name="EmplType" />兼职
+                            </label>
+                            <label class="category">
+                                <input type="checkbox" name="EmplType" />实习
+                            </label>
+                        </div>
+                    </div>
+                    <div class="returnback">
+                        <a href="/jobs/companysearch.ashx?CompID={CompanyID}">重置</a>
+                    </div>
+                    <div class="slideUp">
+                        <a href="javascript:void(0)" class="up">收起</a>
+                    </div>
+                    <div class="searchbtn searchbtn-small">
+                        <button class="doesSearch" type="submit" onclick="return submitfrom();"></button>
+                        <a href="/jobs/searchresult.ashx">快捷搜索</a> 
+                    </div>
+                    <dl class="clearfix"></dl>
+                      {/searchInfo}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="company-introduce">
+    <dl>
+         {#companyInfo}
+        <dt class="company_logo">{companyLogo|s}</dt>
+        <dd class="company_name">
+            {companyName}
+        </dd>
+        <dd>
+            <span>公司行业：</span>{companyIndustryName}
+        </dd>
+        <dd>
+            <span>公司类型：</span>{companyTypeName}
+        </dd>
+        <dd>
+            <span>公司规模：</span>{companySizeName}
+        </dd>
+         {/companyInfo}
+    </dl>
+</div>
+<div class="search_newlist_main">
+      {>"partial/conditionbar2" searchData=searchData/}
+    <div class="newlist_main">
+        <form name="frmMain" method="get" style="margin: 0;">
+            <div class="clearfix">
+                <div class="search-mapcont-list" style="width:853px;">
+                  {>"partial/searchlist" exposureData=exposureData searchInfo=searchInfo searchResult=searchResult brandInfo=brandInfo pagination=pagination/}
+                </div>
+                <div class="newlist_right_code fr">
+                   {>"partial/offsideadbar"/}
+                </div>
+            </div>
+           
+           
+            <div class="interested-thing" style="width:853px;">
+                <h4>
+                    你也许还对这些感兴趣
+                </h4>
+                <ul>
+                   {>"partial/seolink" seoInfo=seoInfo/}
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+
+{/Body}
+
+{<Snippet}
+    <div class="sou-collect" id="sou-collect">
+        <div class="collect-title" id="sou-collect-title">
+            收藏成功<!-- 此职位已收藏-->
+        </div>
+        <div class="collect-content" id="sou-collect-content">
+            您可以在<a href="http://my.zhaopin.com/myzhaopin/jobmng_fav.asp" target="_blank">职位收藏夹</a>中查看
+        </div>
+    </div>
+}
+{/Snippet}
+
+{<FootScript}
+    {@jsloader file="/js/companysearch.min.js,/js/searchList.js,/js/searchjob.init.js,/js/searchresult.js,/js/jquery.cookie.js,/js/sou_list.js,/js/searchLog.js"}{/jsloader}
+  
+    <script language="javascript">
+        //设置发布日期
+        $("#Release-time option").each(function () {
+            if ($(this).val() === $("input[name=PublishDate]").val()) {
+                $(this).attr("selected", true);
+            }
+        });
+
+        //月薪范围
+        $("select[name='SchSalaryFromAdv'] option").each(function () {
+            if ($(this).val() === $("input[name='SalaryFrom_h']").val()) {
+                $(this).attr("selected", "selected");
+            }
+
+        });
+        $("select[name='SchSalaryToAdv'] option").each(function () {
+            if ($(this).val() === $("input[name='SalaryTo_h']").val()) {
+                $(this).attr("selected", "selected");
+            }
+        });
+
+        //职位类别
+        var empt = $("input[name='EmplType']");
+        empt.each(function () {
+            var check = $("input[name='EmplType_h']").val();
+            if (!check) return;
+            var chekvalue = $(this).val();
+            if (check == "") {
+                $(this).attr("checked", 'true');
+            } else {
+                var empts = check.split(';');
+                for (var i = 0; i < empts.length; i++) {
+                    if (empts[i] === chekvalue) {
+                        $(this).attr("checked", 'true');
+                    }
+                }
+
+            }
+        });
+
+        var count = $('.search_yx_tj').find('em').text();
+        var url4zpAnalytics = document.location.pathname + document.location.search + '&rt=' + count;
+    </script>
+{/FootScript}
