@@ -3,22 +3,17 @@
         "out": {
             "type": "console"
         },
-        "task": {
+        "file": {
             "type": "dateFile",
             "filename": "logs/log.log",
             "pattern": "-yyyy-MM-dd",
-            "category": "log",
-            "alwaysIncludePattern": true
+            "category": "log"
         }
     },
     "categories": {
         "default": {
-            "appenders": ["out"],
-            "level": "info"
-        },
-        "task": {
-            "appenders": ["task"],
-            "level": "info"
+            "appenders": ["file"],
+            "level": "debug"
         }
     }
 }
